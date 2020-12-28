@@ -1,0 +1,67 @@
+application {
+  config {
+    baseName Licitatii,
+    applicationType monolith,
+    packageName ro.ctce,
+    authenticationType jwt,
+    prodDatabaseType postgresql,
+    clientFramework angularX
+  }
+  entities *
+}
+enum TipLicitatie {
+	INCHISA,
+    DESCHISA
+}
+enum StareLot {
+	ADJUDECAT,
+    NEADJUDECAT
+}
+entity Lot {
+	nrFisa Integer
+    stare StareLot
+    pretPornire BigDecimal
+    volumBrut BigDecimal
+    volumNet BigDecimal
+    volumCoaja BigDecimal
+}
+
+entity Oferta {
+	castigatoare Boolean
+    pas BigDecimal
+    pret BigDecimal
+}
+
+entity Licitatie {
+	dataLicitatie LocalDate,
+    activa Boolean
+    tipLicitatie TipLicitatie
+}
+
+entity Firma {
+	numeFirma String
+	dreptPreemtiune Boolean
+    volum BigDecimal
+}
+entity Garantie {
+	garantie BigDecimal
+    tarif BigDecimal
+    garantieDepusa BigDecimal
+}
+entity Ocol {
+	numeOcol String
+    ordine Integer
+}
+
+relationship ManyToMany {
+    Licitatie{Firma} to Firma {Licitatie}
+    Licitatie{Lot} to Lot{Licitatie}
+}
+
+relationship OneToMany {
+  Ocol{Lot} to Lot{Ocol}
+  Lot{Oferta} to Oferta{Lot}
+  Firma to Garantie{Firma}
+  Firma{Oferta} to Oferta{Firma}
+}
+
