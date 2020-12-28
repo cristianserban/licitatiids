@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { LicitatiidsSharedModule } from 'app/shared/shared.module';
+import { LicitatiiSharedModule } from 'app/shared/shared.module';
 import { HOME_ROUTE } from './home.route';
 import { HomeComponent } from './home.component';
 
 @NgModule({
-  imports: [LicitatiidsSharedModule, RouterModule.forChild([HOME_ROUTE])],
+  imports: [LicitatiiSharedModule, RouterModule.forChild([HOME_ROUTE])],
   declarations: [HomeComponent],
 })
-export class LicitatiidsHomeModule {}
+export class LicitatiiHomeModule {}

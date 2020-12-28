@@ -1,0 +1,72 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-lot-heading" jhiTranslate="licitatiiApp.lot.home.createOrEditLabel">Create or edit a Lot</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="licitatiiApp.lot.nrFisa" for="field_nrFisa">Nr Fisa</label>
+                    <input type="number" class="form-control" name="nrFisa" id="field_nrFisa"
+                           formControlName="nrFisa"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="licitatiiApp.lot.stare" for="field_stare">Stare</label>
+                    <select class="form-control" name="stare" formControlName="stare" id="field_stare">
+                        <option value="ADJUDECAT">{{ 'licitatiiApp.StareLot.ADJUDECAT' | translate }}</option>
+                        <option value="NEADJUDECAT">{{ 'licitatiiApp.StareLot.NEADJUDECAT' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="licitatiiApp.lot.pretPornire" for="field_pretPornire">Pret Pornire</label>
+                    <input type="number" class="form-control" name="pretPornire" id="field_pretPornire"
+                           formControlName="pretPornire"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="licitatiiApp.lot.volumBrut" for="field_volumBrut">Volum Brut</label>
+                    <input type="number" class="form-control" name="volumBrut" id="field_volumBrut"
+                           formControlName="volumBrut"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="licitatiiApp.lot.volumNet" for="field_volumNet">Volum Net</label>
+                    <input type="number" class="form-control" name="volumNet" id="field_volumNet"
+                           formControlName="volumNet"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="licitatiiApp.lot.volumCoaja" for="field_volumCoaja">Volum Coaja</label>
+                    <input type="number" class="form-control" name="volumCoaja" id="field_volumCoaja"
+                           formControlName="volumCoaja"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="licitatiiApp.lot.ocol" for="field_ocol">Ocol</label>
+                    <select class="form-control" id="field_ocol" name="ocol" formControlName="ocol">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="ocolOption.id === editForm.get('ocol')!.value?.id ? editForm.get('ocol')!.value : ocolOption" *ngFor="let ocolOption of ocols; trackBy: trackById">{{ ocolOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

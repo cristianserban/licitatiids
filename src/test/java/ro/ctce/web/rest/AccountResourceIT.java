@@ -19,7 +19,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
-import ro.ctce.LicitatiidsApp;
+import ro.ctce.LicitatiiApp;
 import ro.ctce.config.Constants;
 import ro.ctce.domain.User;
 import ro.ctce.repository.AuthorityRepository;
@@ -36,7 +36,7 @@ import ro.ctce.web.rest.vm.ManagedUserVM;
  */
 @AutoConfigureMockMvc
 @WithMockUser(value = TEST_USER_LOGIN)
-@SpringBootTest(classes = LicitatiidsApp.class)
+@SpringBootTest(classes = LicitatiiApp.class)
 public class AccountResourceIT {
     static final String TEST_USER_LOGIN = "test";
 

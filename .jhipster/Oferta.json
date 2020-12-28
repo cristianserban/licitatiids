@@ -1,0 +1,44 @@
+{
+  "name": "Oferta",
+  "fields": [
+    {
+      "fieldName": "castigatoare",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "pas",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "pret",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "lot",
+      "otherEntityRelationshipName": "oferta",
+      "relationshipName": "lot",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "firma",
+      "otherEntityRelationshipName": "oferta",
+      "relationshipName": "firma",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201228191618",
+  "entityTableName": "oferta",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["Licitatii"]
+}

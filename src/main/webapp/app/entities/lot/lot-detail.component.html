@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="lot">
+            <h2><span jhiTranslate="licitatiiApp.lot.detail.title">Lot</span> {{ lot.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="licitatiiApp.lot.nrFisa">Nr Fisa</span></dt>
+                <dd>
+                    <span>{{ lot.nrFisa }}</span>
+                </dd>
+                <dt><span jhiTranslate="licitatiiApp.lot.stare">Stare</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'licitatiiApp.StareLot.' + lot.stare }}">{{ lot.stare }}</span>
+                </dd>
+                <dt><span jhiTranslate="licitatiiApp.lot.pretPornire">Pret Pornire</span></dt>
+                <dd>
+                    <span>{{ lot.pretPornire }}</span>
+                </dd>
+                <dt><span jhiTranslate="licitatiiApp.lot.volumBrut">Volum Brut</span></dt>
+                <dd>
+                    <span>{{ lot.volumBrut }}</span>
+                </dd>
+                <dt><span jhiTranslate="licitatiiApp.lot.volumNet">Volum Net</span></dt>
+                <dd>
+                    <span>{{ lot.volumNet }}</span>
+                </dd>
+                <dt><span jhiTranslate="licitatiiApp.lot.volumCoaja">Volum Coaja</span></dt>
+                <dd>
+                    <span>{{ lot.volumCoaja }}</span>
+                </dd>
+                <dt><span jhiTranslate="licitatiiApp.lot.ocol">Ocol</span></dt>
+                <dd>
+                    <div *ngIf="lot.ocol">
+                        <a [routerLink]="['/ocol', lot.ocol?.id, 'view']">{{ lot.ocol?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/lot', lot.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

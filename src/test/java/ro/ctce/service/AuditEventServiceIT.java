@@ -10,14 +10,14 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
-import ro.ctce.LicitatiidsApp;
+import ro.ctce.LicitatiiApp;
 import ro.ctce.domain.PersistentAuditEvent;
 import ro.ctce.repository.PersistenceAuditEventRepository;
 
 /**
  * Integration tests for {@link AuditEventService}.
  */
-@SpringBootTest(classes = LicitatiidsApp.class)
+@SpringBootTest(classes = LicitatiiApp.class)
 @Transactional
 public class AuditEventServiceIT {
     @Autowired

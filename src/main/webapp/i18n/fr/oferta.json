@@ -1,0 +1,26 @@
+{
+  "licitatiiApp": {
+    "oferta": {
+      "home": {
+        "title": "Ofertas",
+        "createLabel": "Créer un nouveau Oferta",
+        "createOrEditLabel": "Créer ou éditer un Oferta",
+        "notFound": "Aucun Oferta trouvé"
+      },
+      "created": "Un nouveau Oferta a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Oferta avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Oferta avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Oferta {{ id }} ?"
+      },
+      "detail": {
+        "title": "Oferta"
+      },
+      "castigatoare": "Castigatoare",
+      "pas": "Pas",
+      "pret": "Pret",
+      "lot": "Lot",
+      "firma": "Firma"
+    }
+  }
+}

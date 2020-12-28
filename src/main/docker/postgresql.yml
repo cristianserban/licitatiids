@@ -1,11 +1,11 @@
 version: '2'
 services:
-  licitatiids-postgresql:
+  licitatii-postgresql:
     image: postgres:12.3
     # volumes:
-    #     - ~/volumes/jhipster/licitatiids/postgresql/:/var/lib/postgresql/data/
+    #     - ~/volumes/jhipster/Licitatii/postgresql/:/var/lib/postgresql/data/
     environment:
-      - POSTGRES_USER=licitatiids
+      - POSTGRES_USER=Licitatii
       - POSTGRES_PASSWORD=
       - POSTGRES_HOST_AUTH_METHOD=trust
     ports:

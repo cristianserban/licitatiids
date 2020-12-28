@@ -1,0 +1,38 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="firma">
+            <h2><span jhiTranslate="licitatiiApp.firma.detail.title">Firma</span> {{ firma.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="licitatiiApp.firma.numeFirma">Nume Firma</span></dt>
+                <dd>
+                    <span>{{ firma.numeFirma }}</span>
+                </dd>
+                <dt><span jhiTranslate="licitatiiApp.firma.dreptPreemtiune">Drept Preemtiune</span></dt>
+                <dd>
+                    <span>{{ firma.dreptPreemtiune }}</span>
+                </dd>
+                <dt><span jhiTranslate="licitatiiApp.firma.volum">Volum</span></dt>
+                <dd>
+                    <span>{{ firma.volum }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/firma', firma.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

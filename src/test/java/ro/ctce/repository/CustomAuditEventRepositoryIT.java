@@ -18,7 +18,7 @@ import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpSession;
 import org.springframework.security.web.authentication.WebAuthenticationDetails;
 import org.springframework.transaction.annotation.Transactional;
-import ro.ctce.LicitatiidsApp;
+import ro.ctce.LicitatiiApp;
 import ro.ctce.config.Constants;
 import ro.ctce.config.audit.AuditEventConverter;
 import ro.ctce.domain.PersistentAuditEvent;
@@ -26,7 +26,7 @@ import ro.ctce.domain.PersistentAuditEvent;
 /**
  * Integration tests for {@link CustomAuditEventRepository}.
  */
-@SpringBootTest(classes = LicitatiidsApp.class)
+@SpringBootTest(classes = LicitatiiApp.class)
 @Transactional
 public class CustomAuditEventRepositoryIT {
     @Autowired

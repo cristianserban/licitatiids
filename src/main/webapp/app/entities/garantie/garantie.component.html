@@ -1,0 +1,71 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="licitatiiApp.garantie.home.title">Garanties</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-garantie" [routerLink]="['/garantie/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="licitatiiApp.garantie.home.createLabel">
+            Create a new Garantie
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="garanties?.length === 0">
+        <span jhiTranslate="licitatiiApp.garantie.home.notFound">No garanties found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="garanties && garanties.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="licitatiiApp.garantie.garantie">Garantie</span></th>
+                    <th scope="col" ><span jhiTranslate="licitatiiApp.garantie.tarif">Tarif</span></th>
+                    <th scope="col" ><span jhiTranslate="licitatiiApp.garantie.garantieDepusa">Garantie Depusa</span></th>
+                    <th scope="col" ><span jhiTranslate="licitatiiApp.garantie.firma">Firma</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let garantie of garanties ;trackBy: trackId">
+                    <td><a [routerLink]="['/garantie', garantie.id, 'view']">{{ garantie.id }}</a></td>
+                    <td>{{ garantie.garantie }}</td>
+                    <td>{{ garantie.tarif }}</td>
+                    <td>{{ garantie.garantieDepusa }}</td>
+                    <td>
+                        <div *ngIf="garantie.firma">
+                            <a [routerLink]="['/firma', garantie.firma?.id, 'view']" >{{ garantie.firma?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/garantie', garantie.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/garantie', garantie.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(garantie)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

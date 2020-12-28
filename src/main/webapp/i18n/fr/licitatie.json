@@ -1,0 +1,26 @@
+{
+  "licitatiiApp": {
+    "licitatie": {
+      "home": {
+        "title": "Licitaties",
+        "createLabel": "Créer un nouveau Licitatie",
+        "createOrEditLabel": "Créer ou éditer un Licitatie",
+        "notFound": "Aucun Licitatie trouvé"
+      },
+      "created": "Un nouveau Licitatie a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Licitatie avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Licitatie avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Licitatie {{ id }} ?"
+      },
+      "detail": {
+        "title": "Licitatie"
+      },
+      "dataLicitatie": "Data Licitatie",
+      "activa": "Activa",
+      "tipLicitatie": "Tip Licitatie",
+      "firma": "Firma",
+      "lot": "Lot"
+    }
+  }
+}

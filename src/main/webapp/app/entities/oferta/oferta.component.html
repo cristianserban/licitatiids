@@ -1,0 +1,77 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="licitatiiApp.oferta.home.title">Ofertas</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-oferta" [routerLink]="['/oferta/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="licitatiiApp.oferta.home.createLabel">
+            Create a new Oferta
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="ofertas?.length === 0">
+        <span jhiTranslate="licitatiiApp.oferta.home.notFound">No ofertas found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="ofertas && ofertas.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="licitatiiApp.oferta.castigatoare">Castigatoare</span></th>
+                    <th scope="col" ><span jhiTranslate="licitatiiApp.oferta.pas">Pas</span></th>
+                    <th scope="col" ><span jhiTranslate="licitatiiApp.oferta.pret">Pret</span></th>
+                    <th scope="col" ><span jhiTranslate="licitatiiApp.oferta.lot">Lot</span></th>
+                    <th scope="col" ><span jhiTranslate="licitatiiApp.oferta.firma">Firma</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let oferta of ofertas ;trackBy: trackId">
+                    <td><a [routerLink]="['/oferta', oferta.id, 'view']">{{ oferta.id }}</a></td>
+                    <td>{{ oferta.castigatoare }}</td>
+                    <td>{{ oferta.pas }}</td>
+                    <td>{{ oferta.pret }}</td>
+                    <td>
+                        <div *ngIf="oferta.lot">
+                            <a [routerLink]="['/lot', oferta.lot?.id, 'view']" >{{ oferta.lot?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="oferta.firma">
+                            <a [routerLink]="['/firma', oferta.firma?.id, 'view']" >{{ oferta.firma?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/oferta', oferta.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/oferta', oferta.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(oferta)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

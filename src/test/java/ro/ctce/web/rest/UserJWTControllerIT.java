@@ -18,7 +18,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
-import ro.ctce.LicitatiidsApp;
+import ro.ctce.LicitatiiApp;
 import ro.ctce.domain.User;
 import ro.ctce.repository.UserRepository;
 import ro.ctce.web.rest.vm.LoginVM;
@@ -27,7 +27,7 @@ import ro.ctce.web.rest.vm.LoginVM;
  * Integration tests for the {@link UserJWTController} REST controller.
  */
 @AutoConfigureMockMvc
-@SpringBootTest(classes = LicitatiidsApp.class)
+@SpringBootTest(classes = LicitatiiApp.class)
 public class UserJWTControllerIT {
     @Autowired
     private UserRepository userRepository;
