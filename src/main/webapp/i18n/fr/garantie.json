@@ -1,0 +1,25 @@
+{
+  "licitatiiApp": {
+    "garantie": {
+      "home": {
+        "title": "Garanties",
+        "createLabel": "Créer un nouveau Garantie",
+        "createOrEditLabel": "Créer ou éditer un Garantie",
+        "notFound": "Aucun Garantie trouvé"
+      },
+      "created": "Un nouveau Garantie a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Garantie avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Garantie avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Garantie {{ id }} ?"
+      },
+      "detail": {
+        "title": "Garantie"
+      },
+      "garantie": "Garantie",
+      "tarif": "Tarif",
+      "garantieDepusa": "Garantie Depusa",
+      "firma": "Firma"
+    }
+  }
+}

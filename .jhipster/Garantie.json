@@ -1,0 +1,37 @@
+{
+  "name": "Garantie",
+  "fields": [
+    {
+      "fieldName": "garantie",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "tarif",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "garantieDepusa",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "firma",
+      "otherEntityRelationshipName": "garantie",
+      "relationshipName": "firma",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201228191918",
+  "entityTableName": "garantie",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["Licitatii"]
+}

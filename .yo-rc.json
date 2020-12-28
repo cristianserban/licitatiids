@@ -2,15 +2,15 @@
   "generator-jhipster": {
     "applicationType": "monolith",
     "gitCompany": "",
-    "baseName": "licitatiids",
+    "baseName": "Licitatii",
     "packageName": "ro.ctce",
     "packageFolder": "ro/ctce",
-    "serverPort": 8080,
+    "serverPort": "8080",
     "serviceDiscoveryType": false,
     "authenticationType": "jwt",
     "uaaBaseName": "../uaa",
-    "cacheProvider": "no",
-    "enableHibernateCache": false,
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
     "websocket": false,
     "databaseType": "sql",
     "devDatabaseType": "h2Disk",
@@ -22,9 +22,9 @@
     "useSass": true,
     "clientPackageManager": "npm",
     "testFrameworks": [],
-    "enableTranslation": false,
+    "enableTranslation": true,
     "nativeLanguage": "en",
-    "languages": ["en"],
+    "languages": ["en", "fr"],
     "clientFramework": "angularX",
     "jhiPrefix": "jhi",
     "jhipsterVersion": "6.10.5",
@@ -36,9 +36,14 @@
     "dtoSuffix": "DTO",
     "otherModules": [],
     "blueprints": [],
-    "prettierJava": true
+    "prettierJava": true,
+    "skipUserManagement": false,
+    "skipClient": false,
+    "skipServer": false,
+    "clientThemeVariant": ""
   },
   "git-provider": "GitHub",
   "git-company": "cristianserban",
-  "repository-name": "licitatiids"
+  "repository-name": "licitatiids",
+  "entities": ["Lot", "Oferta", "Licitatie", "Firma", "Garantie", "Ocol"]
 }

@@ -1,0 +1,77 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="licitatiiApp.lot.home.title">Lots</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-lot" [routerLink]="['/lot/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="licitatiiApp.lot.home.createLabel">
+            Create a new Lot
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="lots?.length === 0">
+        <span jhiTranslate="licitatiiApp.lot.home.notFound">No lots found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="lots && lots.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="licitatiiApp.lot.nrFisa">Nr Fisa</span></th>
+                    <th scope="col" ><span jhiTranslate="licitatiiApp.lot.stare">Stare</span></th>
+                    <th scope="col" ><span jhiTranslate="licitatiiApp.lot.pretPornire">Pret Pornire</span></th>
+                    <th scope="col" ><span jhiTranslate="licitatiiApp.lot.volumBrut">Volum Brut</span></th>
+                    <th scope="col" ><span jhiTranslate="licitatiiApp.lot.volumNet">Volum Net</span></th>
+                    <th scope="col" ><span jhiTranslate="licitatiiApp.lot.volumCoaja">Volum Coaja</span></th>
+                    <th scope="col" ><span jhiTranslate="licitatiiApp.lot.ocol">Ocol</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let lot of lots ;trackBy: trackId">
+                    <td><a [routerLink]="['/lot', lot.id, 'view']">{{ lot.id }}</a></td>
+                    <td>{{ lot.nrFisa }}</td>
+                    <td jhiTranslate="{{ 'licitatiiApp.StareLot.' + lot.stare }}">{{ lot.stare }}</td>
+                    <td>{{ lot.pretPornire }}</td>
+                    <td>{{ lot.volumBrut }}</td>
+                    <td>{{ lot.volumNet }}</td>
+                    <td>{{ lot.volumCoaja }}</td>
+                    <td>
+                        <div *ngIf="lot.ocol">
+                            <a [routerLink]="['/ocol', lot.ocol?.id, 'view']" >{{ lot.ocol?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/lot', lot.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/lot', lot.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(lot)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

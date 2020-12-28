@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="licitatie">
+            <h2><span jhiTranslate="licitatiiApp.licitatie.detail.title">Licitatie</span> {{ licitatie.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="licitatiiApp.licitatie.dataLicitatie">Data Licitatie</span></dt>
+                <dd>
+                    <span>{{ licitatie.dataLicitatie }}</span>
+                </dd>
+                <dt><span jhiTranslate="licitatiiApp.licitatie.activa">Activa</span></dt>
+                <dd>
+                    <span>{{ licitatie.activa }}</span>
+                </dd>
+                <dt><span jhiTranslate="licitatiiApp.licitatie.tipLicitatie">Tip Licitatie</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'licitatiiApp.TipLicitatie.' + licitatie.tipLicitatie }}">{{ licitatie.tipLicitatie }}</span>
+                </dd>
+                <dt><span jhiTranslate="licitatiiApp.licitatie.firma">Firma</span></dt>
+                <dd>
+                    <span *ngFor="let firma of licitatie.firmas; let last = last">
+                        <a [routerLink]="['/firma', firma?.id, 'view']">{{ firma.id }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+                <dt><span jhiTranslate="licitatiiApp.licitatie.lot">Lot</span></dt>
+                <dd>
+                    <span *ngFor="let lot of licitatie.lots; let last = last">
+                        <a [routerLink]="['/lot', lot?.id, 'view']">{{ lot.id }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/licitatie', licitatie.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

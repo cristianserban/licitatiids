@@ -1,16 +1,16 @@
 version: '2'
 services:
-  licitatiids-app:
-    image: licitatiids
+  licitatii-app:
+    image: licitatii
     environment:
       - _JAVA_OPTIONS=-Xmx512m -Xms256m
       - SPRING_PROFILES_ACTIVE=prod,swagger
       - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=true
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://licitatiids-postgresql:5432/licitatiids
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://licitatii-postgresql:5432/Licitatii
       - JHIPSTER_SLEEP=30 # gives time for other services to boot before the application
     ports:
       - 8080:8080
-  licitatiids-postgresql:
+  licitatii-postgresql:
     extends:
       file: postgresql.yml
-      service: licitatiids-postgresql
+      service: licitatii-postgresql

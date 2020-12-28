@@ -20,7 +20,7 @@ import org.springframework.data.auditing.DateTimeProvider;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.transaction.annotation.Transactional;
-import ro.ctce.LicitatiidsApp;
+import ro.ctce.LicitatiiApp;
 import ro.ctce.config.Constants;
 import ro.ctce.domain.User;
 import ro.ctce.repository.UserRepository;
@@ -29,7 +29,7 @@ import ro.ctce.service.dto.UserDTO;
 /**
  * Integration tests for {@link UserService}.
  */
-@SpringBootTest(classes = LicitatiidsApp.class)
+@SpringBootTest(classes = LicitatiiApp.class)
 @Transactional
 public class UserServiceIT {
     private static final String DEFAULT_LOGIN = "johndoe";

@@ -18,7 +18,7 @@ import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
-import ro.ctce.LicitatiidsApp;
+import ro.ctce.LicitatiiApp;
 import ro.ctce.domain.PersistentAuditEvent;
 import ro.ctce.repository.PersistenceAuditEventRepository;
 import ro.ctce.security.AuthoritiesConstants;
@@ -28,7 +28,7 @@ import ro.ctce.security.AuthoritiesConstants;
  */
 @AutoConfigureMockMvc
 @WithMockUser(authorities = AuthoritiesConstants.ADMIN)
-@SpringBootTest(classes = LicitatiidsApp.class)
+@SpringBootTest(classes = LicitatiiApp.class)
 @Transactional
 public class AuditResourceIT {
     private static final String SAMPLE_PRINCIPAL = "SAMPLE_PRINCIPAL";

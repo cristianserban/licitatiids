@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-licitatie-heading" jhiTranslate="licitatiiApp.licitatie.home.createOrEditLabel">Create or edit a Licitatie</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="licitatiiApp.licitatie.dataLicitatie" for="field_dataLicitatie">Data Licitatie</label>
+                    <div class="input-group">
+                        <input id="field_dataLicitatie" type="text" class="form-control" name="dataLicitatie" ngbDatepicker #dataLicitatieDp="ngbDatepicker" formControlName="dataLicitatie"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dataLicitatieDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="licitatiiApp.licitatie.activa" for="field_activa">Activa</label>
+                    <input type="checkbox" class="form-control" name="activa" id="field_activa"
+                           formControlName="activa"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="licitatiiApp.licitatie.tipLicitatie" for="field_tipLicitatie">Tip Licitatie</label>
+                    <select class="form-control" name="tipLicitatie" formControlName="tipLicitatie" id="field_tipLicitatie">
+                        <option value="INCHISA">{{ 'licitatiiApp.TipLicitatie.INCHISA' | translate }}</option>
+                        <option value="DESCHISA">{{ 'licitatiiApp.TipLicitatie.DESCHISA' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="licitatiiApp.licitatie.firma" for="field_firmas">Firma</label>
+                    <select class="form-control" id="field_firmas" multiple name="firmas" formControlName="firmas">
+                        <option [ngValue]="getSelected(editForm.get('firmas')!.value, firmaOption)" *ngFor="let firmaOption of firmas; trackBy: trackById">{{ firmaOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="licitatiiApp.licitatie.lot" for="field_lots">Lot</label>
+                    <select class="form-control" id="field_lots" multiple name="lots" formControlName="lots">
+                        <option [ngValue]="getSelected(editForm.get('lots')!.value, lotOption)" *ngFor="let lotOption of lots; trackBy: trackById">{{ lotOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

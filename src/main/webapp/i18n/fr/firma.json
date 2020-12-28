@@ -1,0 +1,27 @@
+{
+  "licitatiiApp": {
+    "firma": {
+      "home": {
+        "title": "Firmas",
+        "createLabel": "Créer un nouveau Firma",
+        "createOrEditLabel": "Créer ou éditer un Firma",
+        "notFound": "Aucun Firma trouvé"
+      },
+      "created": "Un nouveau Firma a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Firma avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Firma avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Firma {{ id }} ?"
+      },
+      "detail": {
+        "title": "Firma"
+      },
+      "numeFirma": "Nume Firma",
+      "dreptPreemtiune": "Drept Preemtiune",
+      "volum": "Volum",
+      "garantie": "Garantie",
+      "oferta": "Oferta",
+      "licitatie": "Licitatie"
+    }
+  }
+}

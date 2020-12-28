@@ -1,0 +1,32 @@
+{
+  "name": "Ocol",
+  "fields": [
+    {
+      "fieldName": "numeOcol",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ordine",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "lot",
+      "otherEntityRelationshipName": "ocol",
+      "relationshipName": "lot"
+    }
+  ],
+  "changelogDate": "20201228192018",
+  "entityTableName": "ocol",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["Licitatii"]
+}

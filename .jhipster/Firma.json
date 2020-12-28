@@ -1,0 +1,50 @@
+{
+  "name": "Firma",
+  "fields": [
+    {
+      "fieldName": "numeFirma",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dreptPreemtiune",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "volum",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "garantie",
+      "otherEntityRelationshipName": "firma",
+      "relationshipName": "garantie"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "oferta",
+      "otherEntityRelationshipName": "firma",
+      "relationshipName": "oferta"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "licitatie",
+      "otherEntityRelationshipName": "firma",
+      "relationshipName": "licitatie",
+      "otherEntityField": "id",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20201228191818",
+  "entityTableName": "firma",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["Licitatii"]
+}

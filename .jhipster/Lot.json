@@ -1,0 +1,64 @@
+{
+  "name": "Lot",
+  "fields": [
+    {
+      "fieldName": "nrFisa",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "stare",
+      "fieldType": "StareLot",
+      "fieldValues": "ADJUDECAT,NEADJUDECAT"
+    },
+    {
+      "fieldName": "pretPornire",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "volumBrut",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "volumNet",
+      "fieldType": "BigDecimal"
+    },
+    {
+      "fieldName": "volumCoaja",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "oferta",
+      "otherEntityRelationshipName": "lot",
+      "relationshipName": "oferta"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "ocol",
+      "otherEntityRelationshipName": "lot",
+      "relationshipName": "ocol",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "licitatie",
+      "otherEntityRelationshipName": "lot",
+      "relationshipName": "licitatie",
+      "otherEntityField": "id",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20201228191518",
+  "entityTableName": "lot",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["Licitatii"]
+}

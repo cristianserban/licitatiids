@@ -1,0 +1,47 @@
+{
+  "name": "Licitatie",
+  "fields": [
+    {
+      "fieldName": "dataLicitatie",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "activa",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "tipLicitatie",
+      "fieldType": "TipLicitatie",
+      "fieldValues": "INCHISA,DESCHISA"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "firma",
+      "otherEntityRelationshipName": "licitatie",
+      "relationshipName": "firma",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "lot",
+      "otherEntityRelationshipName": "licitatie",
+      "relationshipName": "lot",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20201228191718",
+  "entityTableName": "licitatie",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["Licitatii"]
+}

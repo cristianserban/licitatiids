@@ -31,16 +31,18 @@ import org.springframework.context.MessageSource;
 import org.springframework.mail.MailSendException;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.thymeleaf.spring5.SpringTemplateEngine;
-import ro.ctce.LicitatiidsApp;
+import ro.ctce.LicitatiiApp;
 import ro.ctce.config.Constants;
 import ro.ctce.domain.User;
 
 /**
  * Integration tests for {@link MailService}.
  */
-@SpringBootTest(classes = LicitatiidsApp.class)
+@SpringBootTest(classes = LicitatiiApp.class)
 public class MailServiceIT {
     private static final String[] languages = {
+        "en",
+        "fr",
         // jhipster-needle-i18n-language-constant - JHipster will add/remove languages in this array
     };
     private static final Pattern PATTERN_LOCALE_3 = Pattern.compile("([a-z]{2})-([a-zA-Z]{4})-([a-z]{2})");

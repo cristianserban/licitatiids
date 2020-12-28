@@ -1,0 +1,24 @@
+{
+  "licitatiiApp": {
+    "ocol": {
+      "home": {
+        "title": "Ocols",
+        "createLabel": "Créer un nouveau Ocol",
+        "createOrEditLabel": "Créer ou éditer un Ocol",
+        "notFound": "Aucun Ocol trouvé"
+      },
+      "created": "Un nouveau Ocol a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Ocol avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Ocol avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Ocol {{ id }} ?"
+      },
+      "detail": {
+        "title": "Ocol"
+      },
+      "numeOcol": "Nume Ocol",
+      "ordine": "Ordine",
+      "lot": "Lot"
+    }
+  }
+}
